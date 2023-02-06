@@ -3,3 +3,26 @@
   <%= image_tag @image %>
 </h1>
 <p>Find me in app/views/book/index.html.erb</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>isbn</th>
+      <th>title</th>
+      <th>price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.isbn %></td>
+        <td><%= book.title %></td>
+        <td><%= book.price %></td>
+        <td><%= link_to 'Show' , book %></td>
+        <td><%= link_to 'Edit' , edit_book_path(book) %></td>
+        <td><%= link_to 'Destroy' , book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
