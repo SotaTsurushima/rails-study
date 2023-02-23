@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :users
   # root 'books#index'
   resources :books
+  get 'record/find', to: 'record#find'
 end
